@@ -5,17 +5,13 @@
 #include "DoubleLinkedList.cpp"
 
 
-int main(){
-    DoubleLinkedList q = DoubleLinkedList();
+int main(){ 
+    LinkedList q = LinkedList();
     q.push(11);
     q.push(22);
     q.push(33);
     q.push(44);
-    q.push(55);
-    q.push(66);
-    q.deleteNode(4);
-    //q.pushToPosition(0,10);
-    //q.changeInPosition(0,3); 
+    q.pop();
     q.show();
     return 0;
 }

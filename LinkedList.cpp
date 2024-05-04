@@ -15,6 +15,12 @@ class LinkedList{
 private:
     LLNode* head;
     LLNode* tail;
+
+
+    bool _deleteTail(){
+        delete(this->tail);
+        return true;
+    }
     
 public:
     LinkedList(){
@@ -33,13 +39,42 @@ public:
         
     };
 
+    //consertarei esse metodo futuramente 
+    void popInPosition(int position){
+        LLNode *current = this->head;
+        int posAtual = 0;
+        while(posAtual < position-1){
+            current = current->next;
+            posAtual++;
+            if(current->next == this->tail){
+                break;
+            }
+        }
+        if(current->next == this->tail){
+            LLNode * nextNode = this->tail;
+            this->tail = current;
+            delete(nextNode);
+        }
+
+
+        //std::cout << current->data << "\n";
+        LLNode * prevNode = current;
+        LLNode * nextNode = current->next->next;
+        current = current->next;
+        delete(current);
+        prevNode->next = nextNode;
+
+    }
+
+
     void pop(){
         LLNode *current = this->head;
         while(current->next != this->tail){
             current = current->next;
         }
-        current->next = nullptr;
+        this->_deleteTail();
         this->tail = current;
+        
     };
 
     void show(){
