@@ -3,15 +3,16 @@
 #include "Stack.cpp"
 #include "Queue.cpp"
 #include "DoubleLinkedList.cpp"
+#include "SEList.cpp"
 
 
 int main(){ 
-    LinkedList q = LinkedList();
-    q.push(11);
-    q.push(22);
-    q.push(33);
-    q.push(44);
-    q.pop();
-    q.show();
+    int arr[] = {1,2,3,4,5,6,7,8};
+    int arrr[]= {};
+    SEList q = SEList();
+    //std::cout << arr[2];
+    q._numberOfArrayElements(arr);
+
+
     return 0;
 }

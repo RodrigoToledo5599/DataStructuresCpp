@@ -77,6 +77,13 @@ public:
         
     };
 
+    void dequeue(){
+        LLNode *newHead = this->head->next;
+        delete(this->head);
+        this->head = newHead;
+
+    }
+
     void show(){
         LLNode *current = this->head;
         while(current != this->tail){
