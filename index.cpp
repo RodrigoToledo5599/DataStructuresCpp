@@ -6,13 +6,23 @@
 #include "SEList.cpp"
 
 
-int main(){ 
-    int arr[] = {1,2,3,4,5,6,7,8};
-    int arrr[]= {};
-    SEList q = SEList();
-    //std::cout << arr[2];
-    q._numberOfArrayElements(arr);
-
+int main(){
+    Queue q = Queue();
+    q.enqueue(3);
+    q.enqueue(5);
+    q.enqueue(12);
+    q.enqueue(2);
+    q.enqueue(3412);
+    q.enqueue(542);
+    q.enqueue(99);
+    q.pop();
+    q.pop();
+    q.pop();
+    q.pop();
+    q.pop();
+    q.show();
+    
+    std::cout << "\n\n\n\n\n\n";
 
     return 0;
 }

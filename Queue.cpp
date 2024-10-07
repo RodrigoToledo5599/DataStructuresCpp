@@ -25,12 +25,11 @@ public:
         this->first = nullptr;
     };
 
-    void push(int value){
+    void enqueue(int value){
         QueueNode<int> *valueAdded = new QueueNode<int>(value);
         if(this->first == nullptr){
             this->first = valueAdded;
             this->last = valueAdded;
-            std::cout << "A\n";
         }
         //std::cout << this->first << "  " << this->last << std::endl;
         this->last->next = valueAdded;
@@ -41,16 +40,27 @@ public:
 
     bool pop(){
         if(this->first == nullptr){
-            std::cout << "fila vazia";
             return false;
         }
         this->first = this->first->next;
-        //this->first->prev = nullptr;
+        this->first->prev = nullptr;
         return true;
     };
 
+    bool _isEmpty(){
+        if (this->first == nullptr){
+            return true;
+        }
+        return false;
+    }
+
     void show(){
-        std::cout << "primeiro:  " << this->first->data << "  ultimo:  " << this->last->data << std::endl;
+        if(this->first != nullptr){
+            std::cout << "\nprimeiro:  " << this->first->data << "  ultimo:  " << this->last->data << std::endl;
+        }
+        else{
+            std::cout << "\nfila totalmente vazia";
+        }
     };
 
 };
